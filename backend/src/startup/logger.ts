@@ -1,0 +1,22 @@
+import winston, {format, transports} from 'winston';
+import path from 'path';
+
+const {combine, timestamp, prettyPrint} = format;
+const winstonLogger = winston.createLogger({
+  format: combine(
+    timestamp(),
+    prettyPrint(),
+  ),
+  transports: [
+    new transports.Console(),
+    new transports.File({filename: path.join(__dirname, '../logs/logfile.log')}),
+  ],
+  exitOnError: false,
+});
+
+winstonLogger.exceptions.handle(
+  new transports.File({filename: path.join(__dirname, '../logs/exceptions.log'), level: 'error'})
+);
+
+
+export default winstonLogger;
