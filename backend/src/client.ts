@@ -10,8 +10,7 @@ socket.on('disconnect', () => {
   console.log('disconnect');
 });
 
-socket.on('alarm', (data: any) => {
-  console.log('alarm');
+socket.on('ping', (data: any) => {
   console.log(data);
 });
 

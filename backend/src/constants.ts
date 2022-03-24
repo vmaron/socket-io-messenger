@@ -4,12 +4,9 @@ export enum SocketEvent {
 }
 
 export enum SocketCustomEvent {
-  ALARM_CREATED = 'alarm.created',
-  ALARM_ANSWERED = 'alarm.answered',
-  ALARM_ACKNOWLEDGED = 'alarm.acknowledged',
-  CALL_HANGUP = 'call.hangup',
-  EMAIL_CREATED = 'email.created',
-  EMAIL_OPENED = 'email.opened'
+  MSG_CREATED = 'msg.created',
+  MSG_ANSWERED = 'msg.answered',
+  MSG_ACKNOWLEDGED = 'msg.acknowledged',
 }
 
 export enum Singleton {

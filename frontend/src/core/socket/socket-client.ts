@@ -1,6 +1,6 @@
 import {io, Socket} from 'socket.io-client';
 
-import {SocketAlarm, SocketCustomEvent, SocketEmail, SocketEvent} from './socket-client.types';
+import { SocketCustomEvent,SocketEvent, SocketMessage} from './socket-client.types';
 
 import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
@@ -33,36 +33,24 @@ export class SocketClient {
     });
 
 
-    this.socket.on(SocketCustomEvent.ALARM_CREATED, (socketAlarm: SocketAlarm) => {
-      console.log(socketAlarm.data);
+    this.socket.on(SocketCustomEvent.MSG_CREATED, (socketMsg: SocketMessage) => {
+      console.log(socketMsg);
     });
 
-    this.socket.on(SocketCustomEvent.ALARM_ANSWERED, (resourceId: string) => {
-      console.log(resourceId);
+    this.socket.on(SocketCustomEvent.MSG_ANSWERED, (messageId: string) => {
+      console.log(messageId);
     });
 
-    this.socket.on(SocketCustomEvent.ALARM_ACKNOWLEDGED, (resourceId: string) => {
-      console.log(resourceId);
-    });
-
-    this.socket.on(SocketCustomEvent.CALL_HANGUP, (resourceId: string) => {
-      console.log(resourceId);
-    });
-
-    this.socket.on(SocketCustomEvent.EMAIL_CREATED, (email: SocketEmail) => {
-      console.log(email);
+    this.socket.on(SocketCustomEvent.MSG_ACKNOWLEDGED, (messageId: string) => {
+      console.log(messageId);
     });
   }
 
-  answerAlarm(resourceId: string) {
-    this.socket.emit(SocketCustomEvent.ALARM_ANSWERED, resourceId);
+  answerMessage(messageId: string) {
+    this.socket.emit(SocketCustomEvent.MSG_ANSWERED, messageId);
   }
 
-  acknowledgeAlarm(resourceId: string) {
-    this.socket.emit(SocketCustomEvent.ALARM_ACKNOWLEDGED, resourceId);
-  }
-
-  hangupCall(resourceId: string) {
-    this.socket.emit(SocketCustomEvent.CALL_HANGUP, resourceId);
+  acknowledgeMessage(eventId: string) {
+    this.socket.emit(SocketCustomEvent.MSG_ACKNOWLEDGED, eventId);
   }
 }

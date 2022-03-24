@@ -25,16 +25,8 @@ export default class SocketService {
     this.io.on(SocketEvent.CONNECT, (socket: Socket) => {
       console.log(`connect ${socket.id}`);
 
-      socket.on(SocketCustomEvent.ALARM_ANSWERED, (resourceId: string) => {
-        this.io.emit(SocketCustomEvent.ALARM_ANSWERED, resourceId);
-      });
-
-      socket.on(SocketCustomEvent.ALARM_ACKNOWLEDGED, (resourceId: string) => {
-        this.io.emit(SocketCustomEvent.ALARM_ACKNOWLEDGED, resourceId);
-      });
-
-      socket.on(SocketCustomEvent.CALL_HANGUP, (resourceId: string) => {
-        this.io.emit(SocketCustomEvent.CALL_HANGUP, resourceId);
+      socket.on(SocketCustomEvent.MSG_ANSWERED, (messageId: string) => {
+        this.io.emit(SocketCustomEvent.MSG_ANSWERED, messageId);
       });
 
       socket.on(SocketEvent.DISCONNECT, () => {

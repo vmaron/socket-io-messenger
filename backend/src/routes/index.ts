@@ -1,9 +1,9 @@
 import {heroRoutes} from './hero.route';
-import {emailRoutes} from './email.route';
+import {messageRoutes} from './message.route';
 import express from 'express';
 
 const router = express.Router();
 router.use('/', heroRoutes);
-router.use('/', emailRoutes);
+router.use('/', messageRoutes);
 
 export default router;
