@@ -1,16 +1,7 @@
-export enum SocketEvent {
-  CONNECT = 'connect',
-  DISCONNECT = 'disconnect',
-  CONNECT_ERROR = 'connect_error'
-}
+import {AppState} from '@core/core.state';
+import {EntityState} from "@ngrx/entity";
 
-export enum SocketCustomEvent {
-  MSG_CREATED = 'msg.created',
-  MSG_ANSWERED = 'msg.answered',
-  MSG_ACKNOWLEDGED = 'msg.acknowledged',
-}
-
-export interface SocketMessage {
+export interface Message {
   id: string;
   from: string;
   recipients: Array<string>;
@@ -25,3 +16,14 @@ export interface SocketMessage {
   isReadReceiptRequested: boolean;
   receivedDateTime: Date;
 }
+
+
+export interface MessageState {
+  messages: MessageEntities;
+}
+
+export interface State extends AppState {
+  mailbox: MessageState;
+}
+
+export type MessageEntities = EntityState<Message>;

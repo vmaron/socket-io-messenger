@@ -4,6 +4,9 @@ import { SocketCustomEvent,SocketEvent, SocketMessage} from './socket-client.typ
 
 import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
+import {Store} from "@ngrx/store";
+import {State} from "@core/message/message.model";
+import {actionReceiveMessage} from "@core/message/messages.action";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,7 @@ export class SocketClient {
   private socket: Socket;
 
 
-  constructor() {
+  constructor(private store: Store<State>) {
 
     this.socket = io(environment.webSocketHost, {
       auth: {
@@ -34,7 +37,7 @@ export class SocketClient {
 
 
     this.socket.on(SocketCustomEvent.MSG_CREATED, (socketMsg: SocketMessage) => {
-      console.log(socketMsg);
+      this.store.dispatch(actionReceiveMessage({payload: socketMsg}));
     });
 
     this.socket.on(SocketCustomEvent.MSG_ANSWERED, (messageId: string) => {

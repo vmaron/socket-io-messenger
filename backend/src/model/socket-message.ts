@@ -1,5 +1,5 @@
 export interface SocketMessage {
-  messageId: string;
+  id: string;
   from: string;
   recipients: Array<string>;
   subject: string;
