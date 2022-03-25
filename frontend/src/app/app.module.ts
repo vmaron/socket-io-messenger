@@ -7,10 +7,11 @@ import {SocketClient} from "../core/services";
 import {environment} from "../environments/environment";
 import {ClickOutsideDirective} from "../directives/click-outside.directive";
 import {ClickStopPropagation} from "../directives/click-stop-propagation.directive";
+import {HeaderComponent} from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ClickOutsideDirective, ClickStopPropagation,
+    AppComponent, ClickOutsideDirective, ClickStopPropagation, HeaderComponent,
   ],
   imports: [
     BrowserModule,
