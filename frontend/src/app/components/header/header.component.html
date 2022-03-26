@@ -33,14 +33,8 @@
           </a>
 
           <ul [ngClass]="showMenu ? 'absolute' : 'hidden'" class="drop-menu">
-            <li>
-              <a class="dropdown-item" href="#">Action</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Another Action</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Awesome Action</a>
+            <li *ngFor="let message of messages; let i = index">
+              <a class="dropdown-item" href="#">{{ message.body}}</a>
             </li>
           </ul>
 

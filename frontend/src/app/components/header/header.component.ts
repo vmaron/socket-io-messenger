@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {first, Subject, takeUntil} from "rxjs";
+import {Subject, takeUntil} from "rxjs";
 import {Message, State} from "@core/message/message.model";
 import {select, Store} from "@ngrx/store";
 import {selectAllMessages} from "@core/message/messages.selectors";
@@ -33,6 +33,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   toggleMenu() {
+    if (this.messages.length === 0) {
+      if (this.showMenu)
+        this.showMenu = false;
+      return;
+    }
     this.showMenu = !this.showMenu;
   }
 

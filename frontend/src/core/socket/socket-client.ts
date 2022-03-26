@@ -8,9 +8,7 @@ import {Store} from "@ngrx/store";
 import {State} from "@core/message/message.model";
 import {actionReceiveMessage} from "@core/message/messages.action";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SocketClient {
   private socket: Socket;
 

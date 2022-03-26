@@ -1,6 +1,6 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import {Message, MessageState} from "@core/message/message.model";
-import {actionReceiveMessage} from "@core/message/messages.action";
+import {actionLoadMessages, actionReceiveMessage} from "@core/message/messages.action";
 import {createEntityAdapter, EntityAdapter} from "@ngrx/entity";
 
 export const messageFeatureKey = 'mailbox';
@@ -19,6 +19,9 @@ const reducer = createReducer(
   initialState,
   on(actionReceiveMessage, (state, {payload}) => {
     return ({...state, messages: messageEntityAdapter.upsertOne(payload, state.messages)});
+  }),
+  on(actionLoadMessages, (state, {payload}) => {
+    return ({...state, messages: messageEntityAdapter.upsertMany(payload.messages, state.messages)});
   }),
 );
 

@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": "15d9d45-f6e2-4339-a108-e3dac29d658a",
+      "from": "slav@company.com",
+      "recipients": ["john@company.com"],
+      "subject": "Test Message",
+      "body": "Hello! Have a nice day!",
+      "importance": "normal",
+      "sentDateTime": "2022-03-24T22:23:10.872Z",
+      "conversationId": "1b932895-904f-eec0-7661-1902ed502633",
+      "conversationIndex": 0,
+      "isRead": false,
+      "isDeliveryReceiptRequested": false,
+      "isReadReceiptRequested": false,
+      "receivedDateTime": null
+    },
+    {
+      "id": "25d9d45-f6e2-4339-a108-e3dac29d658a",
+      "from": "slav@company.com",
+      "recipients": ["michael@company.com"],
+      "subject": "Looks great so far",
+      "body": "This is looking great so far and I am happy with results.",
+      "importance": "normal",
+      "sentDateTime": "2022-03-23T22:23:10.872Z",
+      "conversationId": "2b932895-904f-eec0-7661-1902ed502633",
+      "conversationIndex": 0,
+      "isRead": false,
+      "isDeliveryReceiptRequested": false,
+      "isReadReceiptRequested": false,
+      "receivedDateTime": null
+    },
+    {
+      "id": "35d9d45-f6e2-4339-a108-e3dac29d658a",
+      "from": "slav@company.com",
+      "recipients": ["michael@company.com"],
+      "subject": "Your financial report is overdue",
+      "body": "Please submit your quarterly figure for Q1 asap.",
+      "importance": "high",
+      "sentDateTime": "2022-03-23T22:23:10.872Z",
+      "conversationId": "2b932895-904f-eec0-7661-1902ed502633",
+      "conversationIndex": 0,
+      "isRead": false,
+      "isDeliveryReceiptRequested": false,
+      "isReadReceiptRequested": false,
+      "receivedDateTime": null
+    },
+    {
+      "id": "45d9d45-f6e2-4339-a108-e3dac29d658a",
+      "from": "david@company.com",
+      "recipients": ["michael@company.com", "slav@company.com"],
+      "subject": "Leave request require your approval",
+      "body": "Paula Smith requested PTO from June 15, 2022 - June 30, 2022",
+      "importance": "high",
+      "sentDateTime": "2022-03-23T22:23:10.872Z",
+      "conversationId": "2b932895-904f-eec0-7661-1902ed502633",
+      "conversationIndex": 0,
+      "isRead": false,
+      "isDeliveryReceiptRequested": false,
+      "isReadReceiptRequested": false,
+      "receivedDateTime": null
+    }
+  ]
+}

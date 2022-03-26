@@ -1,6 +1,6 @@
 {
   "name": "socket-io-messenger-frontend",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "ng:serve-https": "ng serve --port 4243 --ssl --ssl-key ssl\\private-key.pem  --ssl-cert ssl\\public-cert.pem",

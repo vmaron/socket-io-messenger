@@ -7,6 +7,8 @@ import {RouterStateSerializer, StoreRouterConnectingModule} from '@ngrx/router-s
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {CustomSerializer} from './router/custom-serializer';
 import {environment} from "../environments/environment";
+import {EffectsModule} from "@ngrx/effects";
+import {MessageEffects} from "@core/message/message.effects";
 
 
 export {
@@ -21,6 +23,9 @@ export {
     CommonModule,
     // ngrx
     StoreModule.forRoot(reducers, {}),
+    EffectsModule.forRoot([
+      MessageEffects
+    ]),
     StoreRouterConnectingModule.forRoot(),
     environment.production
       ? []
