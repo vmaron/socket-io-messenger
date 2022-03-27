@@ -9,3 +9,7 @@ export const selectMessageEntities = createSelector(
 );
 
 export const selectAllMessages = createSelector(selectMessageEntities, messageEntityAdapter.getSelectors().selectAll);
+
+export const selectReceivedMessages = createSelector(selectAllMessages, (messages) => messages.sort((a, b) => {
+  return new Date(b.sentDateTime) > new Date(a.sentDateTime) ? 1 : -1;
+}));

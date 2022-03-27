@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject, takeUntil} from "rxjs";
 import {Message, State} from "@core/message/message.model";
 import {select, Store} from "@ngrx/store";
-import {selectAllMessages} from "@core/message/messages.selectors";
+import {selectReceivedMessages} from "@core/message/messages.selectors";
 
 @Component({
   selector: 'app-header',
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.store.pipe(select(selectAllMessages))
+    this.store.pipe(select(selectReceivedMessages))
       .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe({
         next: (messages) => {

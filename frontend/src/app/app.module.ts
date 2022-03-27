@@ -9,10 +9,11 @@ import {ClickOutsideDirective} from "../directives/click-outside.directive";
 import {ClickStopPropagation} from "../directives/click-stop-propagation.directive";
 import {HeaderComponent} from './components/header/header.component';
 import {HttpClientModule} from "@angular/common/http";
+import {TimeDistancePipe} from './pipes/time-distance.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent, ClickOutsideDirective, ClickStopPropagation, HeaderComponent,
+    AppComponent, ClickOutsideDirective, ClickStopPropagation, HeaderComponent, TimeDistancePipe,
   ],
   imports: [
     BrowserModule,

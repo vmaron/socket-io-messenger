@@ -3,13 +3,31 @@
 }
 
 .dropdown-item {
-  @apply text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100;
+  @apply text-sm cursor-pointer rounded py-3 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700;
 }
 
 .drop-menu {
-  @apply absolute right-0 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700;
+  @apply divide-y divide-solid max-h-96 overflow-y-auto absolute right-0 top-6 w-96 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700;
 }
+
+/* Scrollbar */
+.drop-menu::-webkit-scrollbar-thumb {
+  @apply bg-slate-400 rounded;
+}
+
+.drop-menu::-webkit-scrollbar-track {
+  @apply bg-slate-200 rounded;
+}
+
+.drop-menu::-webkit-scrollbar {
+  @apply w-2 rounded;
+}
+
 
 .notify-me {
   @apply text-blue-500 hover:text-blue-700 focus:text-blue-700 mr-4 flex items-center hover:cursor-pointer;
+}
+
+.shadow-xs-inset {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
